@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load data from a CSV file
+data = pd.read_csv('data.csv')
+
+# Create a bar chart
+plt.bar(data['Category'], data['Value'])
+plt.xlabel('Category')
+plt.ylabel('Value')
+plt.title('Data Visualization Example')
+plt.show()
