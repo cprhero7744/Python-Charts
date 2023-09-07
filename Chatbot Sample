@@ -1,0 +1,40 @@
+import random
+
+# Define a dictionary of greetings and responses
+greetings = {
+    "hello": "Hi there! How can I assist you today?",
+    "hi": "Hello! How can I help you?",
+    "hey": "Hey! What can I do for you?",
+}
+
+responses = {
+    "how are you": "I'm just a computer program, so I don't have feelings, but thanks for asking!",
+    "what's your name": "I'm a chatbot. You can call me ChatBotBuddy.",
+    "bye": "Goodbye! Have a great day!",
+}
+
+def get_response(user_input):
+    user_input = user_input.lower()
+
+    # Check if the user's input matches a greeting
+    for greeting in greetings:
+        if greeting in user_input:
+            return greetings[greeting]
+
+    # Check if the user's input matches a predefined response
+    for question in responses:
+        if question in user_input:
+            return responses[question]
+
+    # If no predefined response is found, generate a random response
+    return "I'm not sure what you mean. Can you please rephrase your question?"
+
+print("ChatGPT: Hello! I'm ChatBotBuddy, your friendly chatbot. You can start a conversation with me or type 'bye' to exit.")
+
+while True:
+    user_input = input("You: ")
+    if user_input.lower() == "bye":
+        print("ChatBotBuddy: Goodbye!")
+        break
+    response = get_response(user_input)
+    print("ChatBotBuddy:", response)
